@@ -36,15 +36,15 @@
 
     <div class="contact-container">
         <h1>Contact Me</h1>
-        <form action="mailto:henzlher.143@gmail.com" method="post" enctype="text/plain">
+        <form id="contactForm">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-            <label for="file">Attach Image</label>
-            <input type="file" id="file" name="file" placeholder="Send files here..." required>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" placeholder="mm/dd/yyyy" required>
 
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Write your message..." rows="5" required></textarea>
@@ -52,5 +52,28 @@
             <button type="submit">Send Message</button>
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+            // Initialize EmailJS
+            emailjs.init('x4Ux_8ni5dkeJjLho'); // Replace with your Public Key
+
+            const form = document.getElementById('contactForm');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Send form via EmailJS
+                emailjs.sendForm('service_5oq4r3j', 'template_5adogfe', this)
+                    .then(() => {
+                        alert('Message sent successfully!');
+                        form.reset(); // Clear the form
+                    }, (error) => {
+                        console.error('FAILED...', error);
+                        alert('Failed to send message. Please try again later.');
+                    });
+            });
+        </script>
+
 </body>
 </html>
