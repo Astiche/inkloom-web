@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Get Help</title>
     <link rel="stylesheet" href="css/help.css">
     <link rel="stylesheet" href="css/colorpalette.css">
 </head>
 <body>
 
-    <table class="header-table">
-        <tr>
-            <!-- Image spans multiple rows -->
-            <td rowspan="2" class="logo-cell">
-                <a href="index.html">
-                    <img src="images/InkFrame_Logo.png" alt="InkFrame Logo" class="logo">
-                </a>
-            </td>
-
-            <!-- First row content -->
-            <td class="title-cell">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="images/InkFrame_Logo.png" alt="InkFrame Logo" class="logo">
+            </a>
+            <div class="title-group">
                 <h1><a href="index.html">InkFrame</a></h1>
                 <p class="tagline">Read Free Literature</p>
                 <p class="sub-tagline">Online/Offline Reading</p>
-            </td>
+            </div>
+        </div>
+    </header>
 
-            <!-- Spacer cells for layout -->
-            <td class="spacer"></td>
-        </tr>
-    </table>
-
-
-
-
-
+    <!-- CONTACT FORM -->
     <div class="contact-container">
         <h1>Contact Me</h1>
         <form id="contactForm">
@@ -44,7 +34,7 @@
             <input type="email" id="email" name="email" placeholder="Your Email" required>
 
             <label for="date">Date</label>
-            <input type="date" id="date" name="date" placeholder="mm/dd/yyyy" required>
+            <input type="date" id="date" name="date" required>
 
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Write your message..." rows="5" required></textarea>
@@ -54,26 +44,22 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-        <script>
-            // Initialize EmailJS
-            emailjs.init('x4Ux_8ni5dkeJjLho'); // Replace with your Public Key
+    <script>
+        emailjs.init('x4Ux_8ni5dkeJjLho'); // Replace with your Public Key
 
-            const form = document.getElementById('contactForm');
-
-            form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Send form via EmailJS
-                emailjs.sendForm('service_5oq4r3j', 'template_5adogfe', this)
-                    .then(() => {
-                        alert('Message sent successfully!');
-                        form.reset(); // Clear the form
-                    }, (error) => {
-                        console.error('FAILED...', error);
-                        alert('Failed to send message. Please try again later.');
-                    });
-            });
-        </script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_5oq4r3j', 'template_5adogfe', this)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    form.reset();
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    alert('Failed to send message. Please try again later.');
+                });
+        });
+    </script>
 
 </body>
 </html>
