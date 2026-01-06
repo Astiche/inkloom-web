@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>INKLOOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+  <link rel="icon" href="assets/japanese-temple.png" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="popupOverlay.css" />
+
+  <script type="text/javascript" src="popupOverlay.js" defer></script>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <div class="logo-box"></div>
+        INKLOOM
+      </div>
+
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#">GALLERY</a>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-text">
+        <h1>
+          
+          Read Free<br>
+          Online/Offline
+        </h1>
+
+        <p>
+          Discover a world of stories woven through ink and imagination. <br>
+          InkLoom brings a seamless reading space, anytime—anywhere.
+        </p>
+
+        <div class="buttons"> 
+          <button type="button" class="signinBtn" onclick="openSigninPopup()">Sign In</button>
+          <button type="button" class="signupBtn" onclick="openSignupPopup()">Sign Up</button>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="sun"></div>
+        <div class="shrine"></div>
+      </div>
+
+    </section>
+
+    <div class="side-text">凪</div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="dots">
+        <div class="dot a"></div>
+        <div class="dot b"></div>
+        <div class="dot c"></div>
+      </div>
+
+      <div class="footer-text">
+        © 2024 INKLOOM. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- SIGN IN POPUP TOGGLE -->   
+    <div class="popupSigninOverlay" id="popupSigninOverlay">
+      <div class="signinBox">
+        <h2>SIGN IN</h2><br>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button class="submitBtn" onclick="submitSignIn()">Sign In</button><br><br>
+        <p>Don't have an account? <a href="">Sign Up</a></p>
+      </div>
+    </div>
+
+    <!-- SIGN UP POPUP TOGGLE -->   
+    <div class="popupSignupOverlay" id="popupSignupOverlay">
+      <div class="signupBox">
+        <h2>SIGN UP</h2><br>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button class="submitBtn" onclick="submitSignUp()">Sign Up</button><br><br>
+        <p>Already have an account? <a href="">Sign In</a></p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
